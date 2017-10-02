@@ -1,5 +1,5 @@
 # liboverridehostname
-[![Build Status](https://travis-ci.org/joeblackwaslike/overridehostname.svg?branch=master)](https://travis-ci.org/joeblackwaslike/overridehostname) [![Github Repo](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/joeblackwaslike/overridehostname)
+[![Build Status](https://travis-ci.org/telephoneorg/overridehostname.svg?branch=master)](https://travis-ci.org/telephoneorg/overridehostname) [![Github Repo](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/telephoneorg/overridehostname)
 
 
 ## Maintainer

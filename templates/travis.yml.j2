@@ -25,7 +25,7 @@ notifications:
 {% if github_org == 'telephoneorg' and slack_secret -%}
   slack:
     rooms:
-    - secure: {{ shell('travis encrypt --no-interactive "{}"'.format(slack_secret)) }}
+    - secure: {{ shell('travis encrypt --no-interactive "{}"'.format(slack_secret)).out }}
     on_success: always
     on_failure: always
 {%- endif %}
@@ -44,7 +44,7 @@ script: make test
 deploy:
   provider: releases
   api_key:
-    secure: {{ shell('travis encrypt --no-interactive "GITHUB_TOKEN={}"'.format(github_token)) }}
+    secure: {{ shell('travis encrypt --no-interactive "GITHUB_TOKEN={}"'.format(github_token)).out }}
   file: overridehostname/bin/liboverridehostname.so.1
   skip_cleanup: false
   on:

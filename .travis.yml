@@ -7,13 +7,18 @@ services: docker
 env:
   global:
   - GITHUB_USER=joeblackwaslike
-  - GITHUB_ORG=joeblackwaslike
-  - DOCKER_ORG=joeblackwaslike
+  - GITHUB_ORG=telephoneorg
+  - DOCKER_ORG=telephoneorg
 notifications:
   email:
     on_success: never
     on_failure: always
-branches:
+slack:
+    rooms:
+    - secure: "sE8wb07GJ6N69C0VoOJh8euD3Tu8J7I1pMpagP7Mqv4wIkhdpraGE4bU14yNdPMkF+npOfJ2zNTqgEF+sKPTtX8YLA7nhcwGh5sawQF4ngPCe8V2U8W4+XpcmbzJKKeHAvt22gAfAYZA3gX+q8MjxxSRCAE1Hhed0B2GOjGnOFqQbvdBhBs44aWSCL073rOyHOYIZdhMFuJ3hyI2olVwFrIgSEJH/FfsTuhh3tn0Q9wPiAvh5DuSW6voaZ+6egKVpTa+AYCSxr765EOsFa28SJyjabBDfMz6liYh/enUk6Q1BrxsDXMLwskLqBC6pdDMtJNuEvhVtDScxe0ksYoVwcoeE6J4z4ZZ9+z03+Jtx9tHsdHh0WlnJ75FO25T6CLLmnZArFzCj2+bylSKwj9tPRwTbeuY89rtY+iH57NK26wKPWZ15+hgUB2qTT7Pzv9rPIANcC+d6bXTpgVywB63uzeLo0wLz7aAsQBU8Ggmuu2PTsUz4rs7qggdprr3lsmBoipcf6E0oVQ22uZeIvoIgcTA5aEeW7bFCbw6ubvYe6/M+Q6Q7oX5wY1fsScvr1i16Y1LGCZnELiZQwIc4X1C+M7P4jEaAWQqIrgdEFnyJH559f48ncG0YEiBhniw5pb5a9gtyKdLirxK+3Z+yWhF3z8NoGVWyTv6j564KTjnfQ0="
+
+    on_success: always
+    on_failure: alwaysbranches:
   only:
   - master
 
@@ -28,7 +33,8 @@ script: make test
 deploy:
   provider: releases
   api_key:
-    secure: "HbmyvpWu7iPYr12O3MJPU9y0C7oER2e7eHRjIr93V8kkeyEdR/splJJrpv7RknkYRG9T3AJElZO392Ntfn/dzv7HlCXJUOpskdtm22BvxPp8alaDQIIqFsEdL39W+zwAX6J2vU9M8zIa0Ffh8mVd0AN8Qe7NkG4IEJFEzmvgecvCCaVshFn+i64IzEyY+UdBbEuxVUMfQ9lMt2JH0QYJKqYUNbuOEyGjcQJZdx4ifoKQqi2gtm2el4XF+PGBUjS8d/zWvzfLd8XNwsvwRF+C2sMUzTnfnqMQ8TfsSefCyDPNHqEM4LPzjJN3V8auRFXVq01JxBmUW6LFJFaq9sCsXzgN0KnJWEcfHueYvb+7IAwHR9jGOGdtG/9LIt+utyHEXm6OtQzTF9R0dJCW6AR9NbbGITZcP6lksUPX6/REB6OvbhD2JPGlx4Kvx2zkb9pUlQxt5FWgFkqfiHjaqCcPYF5WW0V/Q9rGOkz++ji03KOyxthMRjiiBVTNb5lJhajGeP/UtZqjBMH5P1MeXVEV5LbjoEV34zbO2KVuj4EGxvTNyaCGC4Er/4iXbSbJ8pFBV810E/Ql7mAjLT6B7oRA3oN19AofMMLFjf66e5gQhEuDHoo+Y/2VjeaVravS+64iupWYcLrin0bmDJJ78Z53vJRJ4zjfoAKUs9aeKKIAOkc="
+    secure: "pDg28aNtzTaig2PU7afvlQT6IrPbWbQdKSYg166JB/KDGINJg1wffE8pTPJk+HFQL86b6NShgObxvCqgJAZLuBSUquz5zIKn/B1NSK3pTkmBWmjSvfWCFOOsZA7hM9sbpVI4Mp6y2JcJp9Je0yAB9QKdOC6mzDnhX5UYPLa54XUcxbjMzDUbbaoLYl7+lV4a408GO6BRUCsC+By1fpd0tFDjBG+C1BbJVuWtjDur2/4BF6u7+amYBfsW5OcycDTYoqU4siCZOPfiJuun17DY2PBXlMtNqK1ok3yVXUUO6xlKg17EVCEoWITP9MyXjTD+22lIh+quopQ5FE8YRoy3h0swkJtepxYMzHEC+iTxnGqsFwvsJpXIfBtIOsutvHbqNYI8QlDL8L59cYedLMxAQEB3WWgG0E1uUDC82JfJMFoClmsIOYSistgyV8wFdsNRVqTMhINo7sRv164DZfX4xllO/KnvO7w8sbjR+SheT8y6bX3/HLyrM6HFjnvKyHnTpCusk3PyvAjt78mh2l3o42XmNk8lVsz6PyqRjzrKZCS7zaeTIRI23K0lXR0Chp/9ehV3KKWWvz3xkUeQT2Agdf0H/HYQtPgD8KuojuY4tY4EgxmRpuVPdqMeex4G8tfZlmskVkMLw1drcYypG++gMasgdbMtZFqpQBzwpE2k7Jo="
+
   file: overridehostname/bin/liboverridehostname.so.1
   skip_cleanup: false
   on:

@@ -44,8 +44,8 @@ script: make test
 deploy:
   provider: releases
   api_key:
-    secure: {{ shell('travis encrypt --no-interactive "GITHUB_TOKEN={}"'.format(github_token)).out.strip() }}
+    secure: lbDISb0CHQTq00Alo7ex3W+X0p+K6zgsl8ui9vR0ueD8UMwXpGbjIWLPBo+8U8EKv5p2j4Zg6Ct1fRfE42uf/xVWLDq8ILD4TDrKw/839l0MF8dgyWfLpgF2gkAX4ZsZho0xUrVB9uKO+p/pVIck7SgRn8BR1UWqZ4nRuCzkOvHNeThXf9Qpz4NAIwWa5MtWWT8Aq0CyhtY79CJMqn8UyDkGms37C7Fc2nh3htuOtBEC8UeeaBes6HFgaK5mhgHLPEfz523ll1k/xkXE4/8CzF52oeLntbG/LHL95XBmldghvASV6Ct9kNYLr6F/gWPF/KCVshCd5dxMYL27IaG/hN6BrqwuTg5MeDEh+RPODzInjmYk3BW9jBob8jtivwedUkoMtZn6AFVEWhmCvYETv1Sh3g/VzFcQwh9Kcs0Z7u2JRbKMhAoUToKEbjpo1hS3o2O1QPigeTKokgrBwm9V6xuaQnlx4hDACAPu4sA6WBujXeiVAGeAgR4PN3++T5qJK39TehsITODQpXSWwEoHJ56bpI/h+/LAmEOHa2FerjznTmUlghqhaDf8ky6vJ6G6xDBnMjTgLkfkU8bgg+m+o/S1xveLA1zbshwtr08UysXPDY55fxl1KRotmvkbNcaZCC0cB0Nfo6eN6yqhAbvRtRFpTEr4tAacP7EcoG2AvRw=
   file: overridehostname/bin/liboverridehostname.so.1
-  skip_cleanup: false
+  skip_cleanup: true
   on:
     tags: true

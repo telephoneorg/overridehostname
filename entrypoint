@@ -39,7 +39,6 @@ eval $(kube-hostname-fix disable)
 
 report 'after disable'
 
-
 [[ $STAY_UP == true ]] && tail -f /dev/null
 
 # For some reason without set +e it will return 1 even with exit 0

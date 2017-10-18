@@ -36,3 +36,4 @@ deploy:
   skip_cleanup: true
   on:
     repo: telephoneorg/overridehostname
+    tags: true

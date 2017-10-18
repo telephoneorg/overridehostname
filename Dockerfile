@@ -1,6 +1,5 @@
 FROM    telephoneorg/debian:stretch
 
-
 MAINTAINER Joe Black <me@joeblack.nyc>
 
 RUN     apt-get update -qq && \
